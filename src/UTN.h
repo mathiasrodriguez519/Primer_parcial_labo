@@ -16,7 +16,7 @@
 
 int myGets(char* cadena, int longitud);
 
-/// @brief transforma el string obtenido de esNumerica y myGets a un entero
+/// @brief transforma el string obtenido de chequearNumeros y myGets a un entero
 ///
 /// @param pResultado puntero por donde se devuelve el entero obtenido
 /// @return devuelve -1 si hubo un error en esta funcion o en alguna de las anteriores - 0 si esta ok
@@ -30,8 +30,8 @@ int tomarEntero(int* pResultado);
 
 int chequearNumeros(char* cadena);
 
-/// @brief pide al usuario que ingrese un entero usando getInt, verifica que este dentro de los parametros establecidos
-/// 	   y duevle el entero generado
+/// @brief pide al usuario que ingrese un entero usando tomarEntero, verifica que este dentro de los parametros establecidos
+/// 	   y devuelve el entero generado
 ///
 /// @param pResultado puntero por el cual devuelve el entero generado
 /// @param mensaje mensaje que se imprime para pedir el dato al usuario
@@ -42,15 +42,15 @@ int chequearNumeros(char* cadena);
 
 int UTN_getInt(int *pResultado, char *mensaje, char *mensajeError, int minimo, int maximo);
 
-/// @brief transforma el string obtenido de esNumerica y myGets a un flotante
+/// @brief transforma el string obtenido de chequearNumeros y myGets a un flotante
 ///
 /// @param pResultado pResultado puntero por donde se devuelve el flotante obtenido
 /// @return devuelve -1 si hubo un error en esta funcion o en alguna de las anteriores - 0 si esta ok
 
 int tomarFloat(float *pResultado);
 
-/// @brief pide al usuario que ingrese un flotante usando getFloat, verifica que este dentro de los parametros establecidos
-/// 	   y duevle el flotante generado
+/// @brief pide al usuario que ingrese un flotante usando tomarFloat, verifica que este dentro de los parametros establecidos
+/// 	   y devuelve el flotante generado
 ///
 /// @param pResultado puntero por el cual devuelve el flotante generado
 /// @param mensaje mensaje que se imprime para pedir el dato al usuario
