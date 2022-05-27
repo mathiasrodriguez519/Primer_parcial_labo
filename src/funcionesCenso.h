@@ -94,4 +94,12 @@ int mostrarViviendas(eVivienda* list, int len, eCensista* censista, int lenCensi
 /// @return int retorna -1 si hubo algún error, si funciona bien retorna 0.
 int mostrarCensistas (eCensista* censistas, int len);
 
+/// @brief mediante contadores cuenta cual censista realizo mas censos.
+/// @param censista eCensista* puntero al array de censistas
+/// @param vivienda eVivienda* puntero al array de vivienda
+/// @param len int tamaño del array
+/// @return
+void contadorCensos(eCensista* censista, eVivienda* vivienda, int len);
+
+
 #endif /* FUNCIONESCENSO_H_ */

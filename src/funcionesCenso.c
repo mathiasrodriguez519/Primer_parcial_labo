@@ -210,3 +210,47 @@ int mostrarCensistas (eCensista* censista, int len)
 
 	return retorno;
 }
+
+void contadorCensos(eCensista* censista, eVivienda* vivienda, int len)
+{
+	int contador100 = 0;
+	int contador101 = 0;
+	int contador102 = 0;
+
+	for (int i = 0; i < len; i++)
+	{
+		switch(vivienda->legajoCensista)
+		{
+		case 100:
+			contador100++;
+			break;
+		case 101:
+			contador101++;
+			break;
+		case 102:
+			contador102++;
+			break;
+		}
+	}
+
+	if(contador100 > contador101 && contador100 > contador102)
+	{
+		printf("El censista con mas censos es Ana");
+	}
+	else
+	{
+		if(contador101 > contador102 && contador101 > contador100)
+		{
+			printf("El censista con mas censos es Juan");
+		}
+		else if(contador102 > contador101 && contador102 > contador100)
+		{
+			printf("El censista con mas censos es Sol");
+		}
+		else
+		{
+			printf("Hay dos o mas censistas con la misma cantidad de censos, cargue mas viviendas");
+		}
+	}
+
+}

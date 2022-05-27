@@ -35,6 +35,7 @@ int main(void)
 	int idAModificar;
 	int indiceAModificar;
 	int viviendasCargadas = 0;
+	int menuListarCensista;
 
 	eVivienda vivienda[TAM_VIVIENDAS];
 	eCensista censista[TAM_CENSISTAS] = { {100, "Ana", 34, "1203-2345"}, {101, "Juan", 24, "4301-54678"}, {102, "Sol", 47, "5902-37487"} };
@@ -53,7 +54,8 @@ int main(void)
 			   "3. BAJA de vivienda.\n"
 			   "4. Listar viviendas.\n"
 			   "5. Listar censistas.\n"
-			   "6. Salir del menu.\n"
+			   "6. Mostrar censista con mas censos.\n"
+			   "7. Salir del menu.\n"
 			   "Ingrese una opcion: ");
 		fflush(stdin);
 		scanf("%d", &opcionMenu);
@@ -197,18 +199,53 @@ int main(void)
 				break;
 
 			case 5:
-				mostrarCensistas(censista, TAM_CENSISTAS);
+				do
+				{
+					printf("\nMenu listar censistas: \n"
+						   "1. Mostrar lista de censistas.\n"
+						   "2. Mostrar lista de los censitas y las viviendas que censaron.\n"
+						   "3. Salir al menu. \n"
+						   "Ingrese una opcion: \n");
+					fflush(stdin);
+					scanf("%d", &menuListarCensista);
+
+					switch(menuListarCensista)
+					{
+					 case 1:
+						 mostrarCensistas(censista, TAM_CENSISTAS);
+						 break;
+					 case 2:
+						 if(viviendasCargadas > 0)
+						 {
+							 printf(".");
+						 }
+						 else
+						 {
+						 	printf("\nNo hay viviendas cargadas, por favor cargue una vivienda.\n");
+						 }
+						 break;
+					 case 3:
+						 printf("Volviendo al menu\n");
+						 break;
+					 default:
+					 	printf("\nError, ingrese una opcion valida.\n");
+					}
+				}while(menuListarCensista != 3);
 				break;
 
 			case 6:
-				printf("\n Saliendo.\n");
+				contadorCensos(censista, vivienda, TAM_CENSISTAS);
+				break;
+
+			case 7:
+				printf("\nSaliendo.\n");
 				break;
 
 			default:
 				printf("\nError, ingrese una opcion valida.\n");
 		}
 
-	}while(opcionMenu != 6);
+	}while(opcionMenu != 7);
 
 	return EXIT_SUCCESS;
 }
